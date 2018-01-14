@@ -26,11 +26,11 @@ class School {
   }
 
   quickFacts(){
-    console.log(`${this.name} educates ${this.numberOfStudents} students, typically between the ages of ${this.level}`);
+    console.log(`${this.name} educates ${this.numberOfStudents} students, typically between the ages of ${this.level}.`);
   }
 
   static pickSubstituteTeacher(substituteTeachers){
-    let rand = Math.floor(Math.random() * substitueTeachers.length - 1);
+    let rand = Math.floor(Math.random() * (substituteTeachers.length - 1));
     return substituteTeachers[rand];
   }
 
@@ -63,3 +63,14 @@ class High extends School {
     console.log(this._sportsTeams);
   }
 }
+
+// testing
+
+let lorraineHansbury = new Primary('Lorraine Hansbury', 514, 'Students must be picked up by a parent, guardian, or a family member over the age of 13.');
+
+lorraineHansbury.quickFacts();
+
+School.pickSubstituteTeacher(['Jamal Crawford', 'Lou Williams', 'J. R. Smith', 'James Harden', 'Jason Terry', 'Manu Ginobli']);
+
+let alSmith = new High('Al E. Smith', 415, ['Baseball', 'Basketball', 'Volleyball', 'Track and Field']);
+alSmith.sportsTeams;
